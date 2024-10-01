@@ -26,9 +26,11 @@ public class TicTacToe extends JFrame implements ActionListener {
     TicTacToe() {
         // create frame
         frame = new JFrame("Tic-Tac-Toe");
+        frame.setFont(DEFAULT_FONT);
 
         // create panel
         panel = new JPanel();
+        panel.setFont(DEFAULT_FONT);
 
         // add buttons
         for (int i = 1; i < 10; i++) {
@@ -49,7 +51,7 @@ public class TicTacToe extends JFrame implements ActionListener {
         }
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(320, 355);
+        frame.setSize(350, 385);
 
         frame.add(panel);
         frame.setLocationRelativeTo(null);
