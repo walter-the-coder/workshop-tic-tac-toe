@@ -1,17 +1,11 @@
 package org.example;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class TicTacToe extends JFrame implements ActionListener {
     JFrame frame;
@@ -33,21 +27,23 @@ public class TicTacToe extends JFrame implements ActionListener {
         panel.setFont(DEFAULT_FONT);
 
         // add buttons
-        for (int i = 1; i < 10; i++) {
-            JButton button = new JButton();
+        for (int i = 0; i < 3; i++) {
+            for (int y = 0; y < 3; y++) {
+                JButton button = new JButton();
 
-            // set the button name so that we can recognize it
-            button.setName(Integer.toString(i));
+                // set the button name so that we can recognize it
+                button.setName(i + ":" + y);
 
-            // set number buttons size and font
-            button.setPreferredSize(DEFAULT_BUTTON_SIZE);
-            button.setFont(DEFAULT_FONT);
+                // set number buttons size and font
+                button.setPreferredSize(DEFAULT_BUTTON_SIZE);
+                button.setFont(DEFAULT_FONT);
 
-            // add button action listeners
-            button.addActionListener(this);
+                // add button action listeners
+                button.addActionListener(this);
 
-            panel.add(button);
-            buttons.add(button);
+                panel.add(button);
+                buttons.add(button);
+            }
         }
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
